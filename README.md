@@ -1,21 +1,15 @@
-import socket
+# Port Scanner
 
+## Description  
+A basic Python script that scans common network ports on a given IP address or hostname and reports which ports are open or closed. Useful for beginners learning about network security and socket programming.
 
-    # Common ports to scan
-    ports = [21, 22, 23, 25, 53, 80, 110, 443, 8080]
+## Features  
+- Scans a set of commonly used ports (e.g., 21, 22, 80, 443)  
+- Simple and easy to understand  
+- Prints results clearly in the terminal
 
-    print(f"\nScanning {target}...\n")
-    for port in ports:
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.settimeout(1)  # Timeout for connection attempt
+## How to Use  
 
-        result = sock.connect_ex((target, port))
-        if result == 0:
-            print(f"[+] Port {port} is open")
-        else:
-            print(f"[-] Port {port} is closed")
-        sock.close()
-
-if __name__ == "__main__":
-    target = input("Enter the target IP address or hostname: ")
-    scan_ports(target)
+1. Make sure you have Python installed (Python 3.x recommended).  
+2. Run the script in the terminal or command prompt:  
+   python scanner.py
